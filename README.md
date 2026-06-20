@@ -8,7 +8,8 @@ This project implements a **minimal custom bootloader** for STM32 with support f
 
 The goal is to deeply understand **low-level MCU startup, memory layout, and control transfer** between bootloader and application.
 
----
+
+
 
 ## Boot Process Flow
 
@@ -28,7 +29,8 @@ The goal is to deeply understand **low-level MCU startup, memory layout, and con
    * Sets VTOR to application vector table
    * Jumps to application's Reset Handler
 
----
+
+
 
 ## Linker Script Design
 
@@ -59,7 +61,8 @@ Each image (bootloader + application) has its own linker script.
 * **LMA (Load Memory Address)** → Flash location
 * **VMA (Virtual Memory Address)** → Execution location (RAM)
 
----
+
+
 
 ## Startup Code
 
@@ -76,7 +79,8 @@ Vector table is defined in `.isr_vector` and includes:
 * Reset Handler
 * Interrupt handlers (weakly linked to `Default_Handler`)
 
----
+
+
 
 ## Bootloader → Application Jump
 
@@ -114,7 +118,8 @@ app_entry();
 * [ ] CRC validation
 * [ ] AES decryption
 
----
+
+
 
 ## Future Work
 
