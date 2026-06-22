@@ -41,7 +41,7 @@ void main(){
         i++;
     }
 
-    if((RAM_START <= app_msp) && (app_msp <= RAM_END) && (FLASH_START <= app_reset) && (app_reset <= FLASH_END) && (app_reset & 1) ){
+    if((RAM_START <= app_msp) && (app_msp <= RAM_END) && (FLASH_START <= app_reset) && (app_reset <= FLASH_END) && (app_reset & 1) ){  //Checking whether MSP and Reset_Handler are within the valid memory regions as well enduring Reset_Handler has valid thumb bit
         if(gpio_read(GPIOC,13)){
             jump_to_app(app_msp,app_reset);
         }
