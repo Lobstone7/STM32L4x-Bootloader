@@ -2,9 +2,9 @@
 
 This project implements a **minimal custom bootloader** for STM32 with support for:
 
-* UART-based firmware updates
-* AES encryption (planned)
-* CRC integrity verification (planned)
+* UART-based firmware updates (on going)
+* AES encryption (on going)
+* CRC integrity verification (on going)
 
 The goal is to deeply understand **low-level MCU startup, memory layout, and control transfer** between bootloader and application.
 
