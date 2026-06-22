@@ -102,9 +102,14 @@ uint32_t app_reset = *(uint32_t*)(APP_BASE + 4U);
 typedef void (*app_entry_t)(void);
 app_entry_t app_entry = (app_entry_t)app_reset;
 
-__disable_irq();
-SCB->VTOR = APP_BASE;
-__set_MSP(app_msp);
+__asm volatile ("cpsid i");
+SCB_VTOR = APP_BASE;
+__asm volatile ("msr msp, %0" : : "r" (app_msp): );
+__asm volatile (
+    "bx %0"
+    :
+    : "r" (app_reset)
+);
 
 app_entry();
 ```
