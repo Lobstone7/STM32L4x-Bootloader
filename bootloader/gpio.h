@@ -1,3 +1,4 @@
+#include "common_include.h"
 #define PERIPHERAL_BASE (0x40000000U)
 
 #define AHB1_OFFSET (0x00020000U)

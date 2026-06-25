@@ -31,6 +31,7 @@ target_link_options(bootloader.elf PRIVATE
 add_executable(app.elf
     app/startup.c
     app/main.c
+    app/firmware_valid.c
 )
 
 target_compile_options(app.elf PRIVATE

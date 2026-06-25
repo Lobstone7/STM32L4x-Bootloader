@@ -1,6 +1,4 @@
 #include "common_include.h"
-volatile uint32_t *VTOR = (uint32_t*)0xE000ED08;
-
 
 extern uint32_t _estack;                   //Tells the compiler _estack has been declared somewhere outside file
 void Reset_Handler(void);
@@ -202,7 +200,6 @@ uint32_t vector[] __attribute__((section(".isr_vector"))) = {              //__a
     (uint32_t)&RNG_HASH_Handler,
     (uint32_t)&FPU_Handler,
     (uint32_t)&HASH_CRS_Handler
-
 };
 
 void Reset_Handler(void){                            //extern declaration of start,end and ram copy of data as well as of start and end of bss

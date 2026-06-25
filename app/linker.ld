@@ -16,6 +16,11 @@ SECTIONS
         KEEP(*(.isr_vector))
     } > FLASH
 
+    .firmware_header :
+    {
+        KEEP(*(.firmware_header))
+    } > FLASH
+
     .text :
     {
         *(.text*)

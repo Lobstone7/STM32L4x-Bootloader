@@ -1,4 +1,3 @@
-#include "common_include.h"
 #include "gpio.h"
 
 void rcc_gpioa_enable(){
