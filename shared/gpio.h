@@ -1,4 +1,6 @@
-#include "common_include.h"
+#ifndef GPIO_H
+#define GPIO_H
+#include "common.h"
 #define PERIPHERAL_BASE (0x40000000U)
 
 #define AHB1_OFFSET (0x00020000U)
@@ -43,6 +45,8 @@ void rcc_gpioa_enable();
 void rcc_gpiob_enable();
 void rcc_gpioc_enable();
 void gpio_pupd(GPIO_Typedef *port, uint32_t pin, uint32_t mode);
+
+#endif
 
 
 

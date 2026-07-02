@@ -11,7 +11,11 @@ set(MCU_FLAGS
 add_executable(bootloader.elf
     bootloader/startup.c
     bootloader/main.c
-    bootloader/gpio.c
+    bootloader/usart_protocol.c
+    shared/clock.c
+    shared/gpio.c
+    shared/USART.c
+    shared/flash.c
 )
 
 target_compile_options(bootloader.elf PRIVATE
@@ -32,6 +36,8 @@ add_executable(app.elf
     app/startup.c
     app/main.c
     app/firmware_valid.c
+    shared/gpio.c
+    shared/USART.c
 )
 
 target_compile_options(app.elf PRIVATE
@@ -54,3 +60,4 @@ add_custom_command(TARGET bootloader.elf POST_BUILD
 add_custom_command(TARGET app.elf POST_BUILD
     COMMAND arm-none-eabi-objcopy -O binary app.elf app.bin
 )
+

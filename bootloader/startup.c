@@ -1,4 +1,4 @@
-#include "common_include.h"
+#include "../shared/common.h"
 
 extern uint32_t _estack;                   //Tells the compiler _estack has been declared somewhere outside file
 void Reset_Handler(void);
@@ -51,7 +51,7 @@ void I2C2_ER_Handler(void) __attribute__((weak, alias("Default_Handler")));
 void SPI1_Handler(void) __attribute__((weak, alias("Default_Handler")));
 void SPI2_Handler(void) __attribute__((weak, alias("Default_Handler")));
 void USART1_Handler(void) __attribute__((weak, alias("Default_Handler")));
-void USART2_Handler(void) __attribute__((weak, alias("Default_Handler")));
+void USART2_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
 void USART3_Handler(void) __attribute__((weak, alias("Default_Handler")));
 void EXTI15_10_Handler(void) __attribute__((weak, alias("Default_Handler")));
 void RTC_ALARM_Handler(void) __attribute__((weak, alias("Default_Handler")));
@@ -155,7 +155,7 @@ uint32_t vector[] __attribute__((section(".isr_vector"))) = {              //__a
     (uint32_t)&SPI1_Handler,
     (uint32_t)&SPI2_Handler,
     (uint32_t)&USART1_Handler,
-    (uint32_t)&USART2_Handler,
+    (uint32_t)&USART2_IRQHandler,
     (uint32_t)&USART3_Handler,
     (uint32_t)&EXTI15_10_Handler,
     (uint32_t)&RTC_ALARM_Handler,
