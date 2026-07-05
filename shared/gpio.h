@@ -1,16 +1,6 @@
 #ifndef GPIO_H
 #define GPIO_H
 #include "common.h"
-#define PERIPHERAL_BASE (0x40000000U)
-
-#define AHB1_OFFSET (0x00020000U)
-#define AHB1 (PERIPHERAL_BASE + AHB1_OFFSET)
-
-#define AHB2_OFFSET (0x08000000U)
-#define AHB2 (PERIPHERAL_BASE + AHB2_OFFSET)
-
-#define RCC_OFFSET (0x00001000U)
-#define RCC (AHB1 + RCC_OFFSET)
 
 #define RCC_AHB2ENR_OFFSET (0x4C)
 #define RCC_AHB2ENR (*(volatile uint32_t*)(RCC + RCC_AHB2ENR_OFFSET))

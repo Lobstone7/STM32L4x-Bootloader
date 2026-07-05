@@ -119,8 +119,8 @@ app_entry();
 * [x] Custom linker scripts (bootloader + app)
 * [x] Startup code implementation
 * [x] Bootloader → application jump
-* [ ] UART firmware update
-* [ ] CRC validation
+* [x] UART firmware update
+* [x] CRC validation
 * [ ] AES decryption
 
 
