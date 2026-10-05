@@ -1,3 +1,4 @@
+//Used to attach CRC header for app.
 #include "header_tool.h"
 
 typedef struct{

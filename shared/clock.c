@@ -1,3 +1,4 @@
+//This was AI generated cause i couldnt figure out what was wrong with the clock speed since i didnt use STMCubeIDE to set clock speed.
 #include "clock.h"
 
 

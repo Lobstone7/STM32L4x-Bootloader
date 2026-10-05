@@ -1,3 +1,4 @@
+//Currently polling driven. Will make it interrupt driven in next iteration.
 #include "USART.h"
 
 

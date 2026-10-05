@@ -7,12 +7,12 @@ void flash_init(){
 
 void unlock_flash(){
     while(FLASH->SR & (1U << 16));
-    FLASH->KEYR =  0x45670123;
+    FLASH->KEYR =  0x45670123;                          //Needed Keys to unlock operations on flash.
     FLASH->KEYR =  0xCDEF89AB;
 }
 
 void lock_flash(){
-    while(FLASH->SR & (1U << 16));
+    while(FLASH->SR & (1U << 16));                      //Lock Flash peripheral to prevent flash operations.
     FLASH->CR |= (1U << 31);
 }
 
