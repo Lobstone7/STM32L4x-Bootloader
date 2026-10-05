@@ -3,9 +3,7 @@ import os
 import serial
 import time
 
-# -----------------------------
 # Configuration
-# -----------------------------
 PORT = "COM11"
 BAUDRATE = 115200
 CHUNK_SIZE = 256
@@ -14,9 +12,7 @@ CHUNK_SIZE = 256
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 FIRMWARE = os.path.join(SCRIPT_DIR, "..", "build", "app.bin")
 
-# -----------------------------
 # Protocol bytes
-# -----------------------------
 WRITE = b'w'
 READY = b'R'
 ACK = b'A'
@@ -24,9 +20,7 @@ NACK = b'F'
 SUCCESS = b'S'
 ERROR = b'E'
 
-# -----------------------------
 # Open serial port
-# -----------------------------
 try:
     ser = serial.Serial(PORT, BAUDRATE, timeout=60)
 except serial.SerialException as e:
@@ -40,9 +34,7 @@ time.sleep(2)
 ser.reset_input_buffer()
 ser.reset_output_buffer()
 
-# -----------------------------
 # Send write command
-# -----------------------------
 print("Sending write request...")
 ser.write(WRITE)
 
@@ -60,9 +52,7 @@ if ready != READY:
 
 print("Bootloader ready.\n")
 
-# -----------------------------
 # Read firmware file
-# -----------------------------
 if not os.path.isfile(FIRMWARE):
     print(f"Firmware file not found:\n{FIRMWARE}")
     ser.close()
@@ -79,9 +69,8 @@ print(f"Firmware size : {firmware_size} bytes")
 print(f"Packet size   : {CHUNK_SIZE} bytes")
 print(f"Total packets : {total_packets}\n")
 
-# -----------------------------
+
 # Send firmware packets
-# -----------------------------
 offset = 0
 packet_number = 1
 
@@ -131,9 +120,7 @@ while offset < firmware_size:
 
     packet_number += 1
 
-# -----------------------------
 # Wait for final status
-# -----------------------------
 print("All packets transmitted.")
 print("Waiting for CRC verification...")
 
