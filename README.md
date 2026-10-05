@@ -13,7 +13,6 @@ The bootloader currently supports:
 - STM32 Flash erase and programming
 - CRC32 firmware integrity verification
 - Firmware metadata stored in a custom header
-- GDB-based debugging during development
 
 > **Current version:** V1  
 > **MCU:** STM32L476RG  
@@ -33,7 +32,6 @@ The bootloader currently supports:
 - [Firmware Verification](#firmware-verification)
 - [UART Firmware Update](#uart-firmware-update)
 - [Flash Programming](#flash-programming)
-- [Debugging](#debugging)
 - [Project Structure](#project-structure)
 - [Future Work](#future-work)
 
